@@ -1,19 +1,19 @@
 class Solution {
     public List<String> fizzBuzz(int n) {
-        List<String> answer = new ArrayList<>();
-
+        List<String> ans = new ArrayList<>();
         for(int i = 1; i <= n; i++) {
-            if((i % 3 == 0) && (i % 5 == 0)) {
-                answer.add("FizzBuzz");
+
+            if(i % 15 == 0) {
+                ans.add("FizzBuzz");
             }else if(i % 3 == 0) {
-                answer.add("Fizz");
+                ans.add("Fizz");
             }else if(i % 5 == 0) {
-                answer.add("Buzz");
+                ans.add("Buzz");
             }else {
-                answer.add(i + "");
+                ans.add(i + "");
             }
         }
 
-        return answer;
+        return ans;
     }
 }
