@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isHappy(int n) {
+        while(n != 1 && n != 4) {
+            n = digitSquare(n);
+        }
+
+        return n == 1;
+    }
+
+    public int digitSquare(int num) {
+        int sum = 0;
+        while(num > 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num = num / 10;
+        }
+
+        return sum;
+    }
+}
