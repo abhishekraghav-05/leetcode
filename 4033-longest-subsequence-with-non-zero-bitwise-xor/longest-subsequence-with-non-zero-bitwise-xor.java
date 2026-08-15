@@ -1,8 +1,6 @@
 class Solution {
     public int longestSubsequence(int[] nums) {
-        int n = nums.length;
-        int subseq = 0;
-        int count = n; 
+        int n = nums.length, subseq = 0; 
         boolean nonZero = false;
 
         for(int num : nums) {
@@ -13,15 +11,11 @@ class Solution {
             }
         }
 
-        // for(int i = n - 1; i > 0; i--) {
-            if(subseq > 0) {
-                return count;
-            }
-        //     subseq ^= nums[i];
-        //     count--;
-        // }
+        if(subseq > 0) {
+            return n;
+        }
 
-        if (nonZero) {
+        if(nonZero) {
             return n - 1;
         }
 
