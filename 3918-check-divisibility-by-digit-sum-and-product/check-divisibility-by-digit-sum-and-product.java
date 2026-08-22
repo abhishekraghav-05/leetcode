@@ -1,17 +1,15 @@
 class Solution {
     public boolean checkDivisibility(int n) {
         int num = n;
-        int digitSum = 0; 
-        long digitProduct = 1;
-        
-        while(num > 0) {
-            int digit = num % 10;
-            digitSum += digit;
-            digitProduct *= digit;
+        int sum = 0, pro = 1;
 
-            num /= 10;
+        while(num > 0) {
+            int d = num % 10;
+            sum += d;
+            pro *= d;
+            num /= 10; 
         }
 
-        return (n % (digitSum + digitProduct) == 0);
+        return (n % (sum + pro) == 0); 
     }
 }
