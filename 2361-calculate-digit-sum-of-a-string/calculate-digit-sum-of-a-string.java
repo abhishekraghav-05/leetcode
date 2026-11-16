@@ -2,10 +2,11 @@ class Solution {
     public String digitSum(String s, int k) {
         
         while(k < s.length()) {
+            StringBuffer sb = new StringBuffer();
+
             int n = s.length();
             int kVal = k;
             int sum = 0;
-            String str = "";
 
             for(int i = 0; i < n; i++) {
                 char ch = s.charAt(i);
@@ -15,13 +16,13 @@ class Solution {
                 }
 
                 if(kVal == 0 || i == n - 1) {
-                    str += sum;
+                    sb.append(sum);
                     sum = 0;
                     kVal = k;
                 }
             }
 
-            s = str;
+            s = sb.toString();
         }
 
         return s;
